@@ -29,9 +29,14 @@ app = FastAPI(
 )
 
 # CORS middleware
+# Filter out regex patterns from allow_origins and use allow_origin_regex instead
+cors_origins = [origin for origin in settings.CORS_ORIGINS if not "*" in origin]
+cors_origin_regex = r"https://.*\.vercel\.app" if any("*" in origin for origin in settings.CORS_ORIGINS) else None
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.CORS_ORIGINS,
+    allow_origins=cors_origins,
+    allow_origin_regex=cors_origin_regex,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
