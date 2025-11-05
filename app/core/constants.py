@@ -1,0 +1,28 @@
+"""
+Application constants
+"""
+# API Configuration
+API_V1_PREFIX = "/api"
+
+# LLM Configuration
+DEFAULT_MAX_TOKENS = 1000
+MIN_MAX_TOKENS = 1
+MAX_MAX_TOKENS = 4000
+
+# Temperature and Top-P ranges
+MIN_TEMPERATURE = 0.0
+MAX_TEMPERATURE = 2.0
+MIN_TOP_P = 0.0
+MAX_TOP_P = 1.0
+
+# Batch Processing
+DEFAULT_BATCH_SIZE = 5
+MAX_CONCURRENT_REQUESTS = 10
+
+# Database
+DEFAULT_PAGINATION_LIMIT = 100
+MAX_PAGINATION_LIMIT = 1000
+
+# Response Validation
+MIN_RESPONSE_LENGTH = 10
+CORRUPTION_THRESHOLD = 0.6
